@@ -4,12 +4,17 @@ It contains the definition of routes and views for the application.
 """
 
 from flask import Flask,render_template,request
+import chess
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
 
-
+def makeMove(position):
+    board = chess.Board(fen = position)
+    moveGenerator = list(board.legal_moves)
+    move = moveGenerator[0]
+    return move.uci();
 @app.route('/')
 def hello():
     """Renders a sample page."""
@@ -22,8 +27,9 @@ def index():
 
 @app.route('/playermove', methods=["POST"])
 def playermove():
-    print(request.json["move"]);
-    return {"move": "a2b4"}
+    position = request.json["position"]
+    move = makeMove(position)
+    return {"move": move}
 if __name__ == '__main__':
     import os
     HOST = os.environ.get('SERVER_HOST', 'localhost')
