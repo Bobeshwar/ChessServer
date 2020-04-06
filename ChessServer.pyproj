@@ -29,6 +29,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="moveEvaluator.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="static\img\chesspieces\wikipedia\bB.png" />
@@ -43,12 +46,24 @@
     <Content Include="static\img\chesspieces\wikipedia\wP.png" />
     <Content Include="static\img\chesspieces\wikipedia\wQ.png" />
     <Content Include="static\img\chesspieces\wikipedia\wR.png" />
-    <Content Include="static\css\chessboard-1.0.0.css" />
-    <Content Include="static\js\chess.js" />
-    <Content Include="static\js\chessboard-1.0.0.js" />
-    <Content Include="static\js\chessServer.js" />
-    <Content Include="static\js\jquery-3.4.1.min.js" />
-    <Content Include="templates\index.html" />
+    <Content Include="static\css\chessboard-1.0.0.css">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="static\js\chess.js">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="static\js\chessboard-1.0.0.js">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="static\js\chessServer.js">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="static\js\jquery-3.4.1.min.js">
+      <Publish>True</Publish>
+    </Content>
+    <Content Include="templates\index.html">
+      <Publish>True</Publish>
+    </Content>
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
